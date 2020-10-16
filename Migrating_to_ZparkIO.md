@@ -1,7 +1,4 @@
 
-Migrating from a plain Spark Application to ZIO with ZparkIO
-
-
 # Migrating from a plain Spark Application to ZIO with ZparkIO
 In this article, we'll see how you can migrate your Spark Application into [ZIO](https://zio.dev) and [ZparkIO](https://github.com/leobenkel/ZparkIO), so you can benefit from all the wonderful features that ZIO offers and that we'll be discussing.
 ## What is ZIO?
