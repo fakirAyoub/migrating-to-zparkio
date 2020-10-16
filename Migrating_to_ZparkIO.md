@@ -20,11 +20,11 @@ The process of integrating ZIO to our Spark Programs can be hard, especially for
 
 ## Using ZparkIO to bootstrap a Spark / ZIO project
 
-The first step is to create a trait that extends **ZparkioApp[R, E, A]**, where you would need to override two methods: `makeCli` and `runApp`.
+The first step is to create a trait that extends `ZparkioApp[R, E, A]`, where you would need to override two methods: `makeCli` and `runApp`.
 
-**makeCli(args: List[String])** compiles all the program arguments for you (for the moment, *scallop* is used by default, but we're in the process of extracting this module so you can use your CLI tool of choice). 
+`makeCli(args: List[String])` compiles all the program arguments for you (for the moment, *scallop* is used by default, but we're in the process of extracting this module so you can use your CLI tool of choice). 
 
-**runApp():ZIO[COMPLETE_ENV, E, A]** is the main function where your program's logic resides.
+`runApp():ZIO[COMPLETE_ENV, E, A]` is the main function where your program's logic resides.
 
 ```scala
 override def runApp(): ZIO[COMPLETE_ENV, Throwable, Unit] = ???
