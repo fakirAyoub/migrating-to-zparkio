@@ -100,6 +100,13 @@ def readData[A](inputPath: String): ZIO[SparkModule, Throwable, Dataset[A]] =
   } yield dataset
 ```
 
+or
+
+```scala
+def readData[A](inputPath: String): ZIO[SparkModule, Throwable, Dataset[A]] = 
+  SparkModule().map(_.read.parquet(inputPath))
+```
+
 Please note that we didn't have to use an implicit parameter as the session is already provided by the SparkModule() method of the library. The function **readData** uses a Spark Environment, namely **SparkModule**, may fail with a Throwable, and in case of success, returns a Dataset of some type A (I'm using Datasets here instead of DataFrames because first, we need some better typing, and second, Leo is allergic to Dataframes).
 
 The instruction to read data from the filesystem is wrapped into a *Task*. Task is of type IO[Throwable, A], which means that it does not depend on any environment (implicitely *Any*). Then we provide the dataset we just read, which matches the return type of our function.
