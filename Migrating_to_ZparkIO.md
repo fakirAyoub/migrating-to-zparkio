@@ -123,7 +123,7 @@ def calculateSomeAggregations[A](ds: Dataset[A]): IO[Throwable, Dataset[A]] = {
 
 And... Voilà ! Your safe method is ready!
 
-## But after all, why would you need to migration your project and start using ZIO?
+## But after all, why would you need to migrate your project and start using ZIO?
 
 Well, one first and obvious argument is that it's... safer, more composable and lets you more easily about the logic of your program.
 
